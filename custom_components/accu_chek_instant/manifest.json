@@ -1,7 +1,7 @@
 {
   "domain": "accu_chek_instant",
   "name": "Accu-Chek Instant",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "config_flow": true,
   "dependencies": [
     "bluetooth"

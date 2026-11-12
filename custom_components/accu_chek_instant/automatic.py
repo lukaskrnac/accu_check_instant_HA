@@ -52,6 +52,23 @@ def register_automatic_sync(hass, entry):
             hass, sync_when_awake(datetime.now(UTC)), "Accu-Chek Instant automatic sync"
         )
 
-    entry.async_on_unload(
-        bluetooth.async_register_advertisement_callback(hass, on_advertisement, entry.data["address"])
+    address = entry.data["address"]
+    register_advertisement = getattr(bluetooth, "async_register_advertisement_callback", None)
+    if register_advertisement is not None:
+        entry.async_on_unload(register_advertisement(hass, on_advertisement, address))
+        return
+
+    async def watch_advertisement_cache():
+        # Older HA versions keep the last packet's timestamp even when their
+        # change callbacks suppress identical advertisement payloads.
+        last_seen = monotonic()
+        while True:
+            await asyncio.sleep(1)
+            info = bluetooth.async_last_service_info(hass, address, connectable=True)
+            if info is not None and info.time > last_seen:
+                last_seen = info.time
+                on_advertisement(info)
+
+    entry.async_create_background_task(
+        hass, watch_advertisement_cache(), "Accu-Chek Instant Bluetooth watch"
     )
