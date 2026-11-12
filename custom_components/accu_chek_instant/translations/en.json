@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Accu-Chek Instant",
+        "description": "Enter the meter's Bluetooth address and pairing PIN. Nightscout Lite is optional.",
+        "data": {
+          "address": "Bluetooth MAC address",
+          "pin": "Bluetooth PIN (6 digits)",
+          "nightscout_url": "Nightscout Lite write URL",
+          "write_secret": "Nightscout Lite write_secret"
+        }
+      },
+      "reconfigure": {
+        "title": "Accu-Chek Instant settings",
+        "data": {
+          "address": "Bluetooth MAC address",
+          "pin": "Bluetooth PIN (6 digits)",
+          "nightscout_url": "Nightscout Lite write URL",
+          "write_secret": "Nightscout Lite write_secret"
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "Use the format AA:BB:CC:DD:EE:FF.",
+      "invalid_pin": "Enter a six-digit PIN.",
+      "invalid_url": "Enter a base URL, for example http://192.168.1.10:1338.",
+      "incomplete_nightscout": "Enter both the URL and write_secret, or leave both empty."
+    },
+    "abort": {
+      "already_configured": "This meter is already configured.",
+      "reconfigure_successful": "Settings saved.",
+      "unique_id_mismatch": "Add a new meter for a different Bluetooth address."
+    }
+  }
+}

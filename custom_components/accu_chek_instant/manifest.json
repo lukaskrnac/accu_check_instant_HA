@@ -1,0 +1,15 @@
+{
+  "domain": "accu_chek_instant",
+  "name": "Accu-Chek Instant",
+  "version": "0.2.1",
+  "config_flow": true,
+  "dependencies": [
+    "bluetooth"
+  ],
+  "documentation": "https://github.com/lukaskrnac/accu_check_instant_HA",
+  "iot_class": "local_polling",
+  "codeowners": [
+    "@lukaskrnac"
+  ],
+  "issue_tracker": "https://github.com/lukaskrnac/accu_check_instant_HA/issues"
+}

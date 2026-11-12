@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Accu-Chek Instant",
+        "description": "Zadaj Bluetooth adresu glukomera a jeho PIN. Nightscout Lite je voliteľný.",
+        "data": {
+          "address": "Bluetooth MAC adresa",
+          "pin": "Bluetooth PIN (6 číslic)",
+          "nightscout_url": "Nightscout Lite URL pre zápis",
+          "write_secret": "Nightscout Lite write_secret"
+        }
+      },
+      "reconfigure": {
+        "title": "Nastavenia Accu-Chek Instant",
+        "data": {
+          "address": "Bluetooth MAC adresa",
+          "pin": "Bluetooth PIN (6 číslic)",
+          "nightscout_url": "Nightscout Lite URL pre zápis",
+          "write_secret": "Nightscout Lite write_secret"
+        }
+      }
+    },
+    "error": {
+      "invalid_mac": "Použi formát AA:BB:CC:DD:EE:FF.",
+      "invalid_pin": "PIN musí mať šesť číslic.",
+      "invalid_url": "Zadaj základnú adresu, napríklad http://192.168.1.10:1338.",
+      "incomplete_nightscout": "Zadaj adresu aj write_secret, alebo nechaj obe polia prázdne."
+    },
+    "abort": {
+      "already_configured": "Tento glukomer už je nakonfigurovaný.",
+      "reconfigure_successful": "Nastavenia boli uložené.",
+      "unique_id_mismatch": "Pre inú Bluetooth adresu pridaj nový glukomer."
+    }
+  }
+}
